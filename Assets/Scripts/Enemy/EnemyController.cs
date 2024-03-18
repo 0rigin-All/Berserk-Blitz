@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    //je suis jules
+    //test
+    /// <summary>
+    /// 
+    /// </summary>
     GameObject player;
     PlayerController playerController;
     int player_health;
