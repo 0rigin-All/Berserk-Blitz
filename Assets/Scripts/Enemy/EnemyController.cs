@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
+    //je suis jules
     GameObject player;
     PlayerController playerController;
     int player_health;
