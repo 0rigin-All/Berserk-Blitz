@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using StarterAssets;
@@ -16,6 +17,7 @@ public class TimerHUDController : MonoBehaviour
 
     private PlayerInput playerInput;
 
+    public Boolean  isPaused;
 
     //private NextWaveController nextWaveController;
     GameObject nextWaveButton;
@@ -47,7 +49,7 @@ public class TimerHUDController : MonoBehaviour
         waveTime = canva.GetComponent<WaveScript>().timer;
         seconde = Mathf.FloorToInt(waveTime);
 
-        if (seconde <= 0 || Time.timeScale == 0F)
+        if (seconde <= 0 || Time.timeScale == 0F && isPaused == false)
         {
             timer_Text.text = "Vague terminée";
 
@@ -68,7 +70,9 @@ public class TimerHUDController : MonoBehaviour
 
         void OnPauseMenu(InputValue value)
     {
+        isPaused = true;
         Debug.Log("OnPauseMenu Action is called");
+        Debug.Log(isPaused);
         Time.timeScale = 0F;
     }
 
