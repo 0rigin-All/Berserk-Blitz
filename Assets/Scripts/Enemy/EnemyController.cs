@@ -4,10 +4,6 @@ using UnityEngine;
 
 public class EnemyController : MonoBehaviour
 {
-    //test
-    /// <summary>
-    /// 
-    /// </summary>
     GameObject player;
     PlayerController playerController;
     int player_health;
@@ -20,7 +16,7 @@ public class EnemyController : MonoBehaviour
     private float angularSpeed;
     private float acceleration;
 
-    public GameObject drop;
+    public GameObject dropPrefab;
 
     // Start is called before the first frame update
     void Start()
@@ -44,6 +40,23 @@ public class EnemyController : MonoBehaviour
             invincibility = false;
         }
     }
+     private void DropItem()
+    {
+         Debug.Log("drop gold !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+        if (dropPrefab != null)
+        {
+            // Instancier la pièce à l'emplacement de l'ennemi
+            Debug.Log("gold drop !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Instantiate(dropPrefab, transform.position, Quaternion.identity);
+        }
+    }
+    
+    private void OnDestroy()
+    {
+        Debug.Log("object detruit");
+        // Appeler la méthode pour générer la pièce
+        DropItem();
+    }
     void OnCollisionEnter(Collision collision)
     {
         var element = collision.gameObject;
@@ -53,7 +66,6 @@ public class EnemyController : MonoBehaviour
             health -= intBulletDamage;
             if (health <= 0)
             {
-                Instantiate(drop, gameObject.transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }
 

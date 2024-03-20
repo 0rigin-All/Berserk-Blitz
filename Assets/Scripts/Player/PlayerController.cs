@@ -88,9 +88,11 @@ public class PlayerController : MonoBehaviour
     public int health = 100;
     public GameObject wallPrefab;
     public int wallNumber = 1;
+    public int goldNumber = 0;
     private GameObject canva;
     private bool waveState;
     private PlayerInput playerInput;
+    public GoldHUDController GoldhudController;
 
     void Start()
     {
@@ -131,7 +133,24 @@ public class PlayerController : MonoBehaviour
             }
         }
     }
-
+    void OnTriggerEnter(Collider other)
+    {
+        Debug.Log("triggerenter");
+        if (other.CompareTag("Gold"))
+        {
+            goldNumber++; // Augmentez le nombre d'or du joueur
+            Destroy(other.gameObject); // Détruisez la pièce
+             UpdateGoldHUD();
+        }
+    }
+    void UpdateGoldHUD()
+    {
+                Debug.Log("normalement le hud se met à jour");
+        if (GoldhudController != null)
+        {        Debug.Log("normalement le hud se met à jour et on rentre dans le if");
+            GoldhudController.UpdateGoldText(goldNumber); // Mettre à jour le HUD avec le nouveau nombre de pièces
+        }
+    }
     void WaveStateCheck()
     {
         waveState = canva.GetComponent<WaveScript>().finishedWave;
