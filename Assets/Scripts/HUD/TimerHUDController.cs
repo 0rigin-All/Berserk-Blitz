@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using StarterAssets;
 using TMPro;
 using Unity.VisualScripting;
+using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -11,41 +12,39 @@ public class TimerHUDController : MonoBehaviour
 {
     public float waveTime;
     private GameObject canva;
-    private GameObject player;
     private int seconde;
-    public FirstPersonController firstPersonController;
 
-    private PlayerInput playerInput;
+    public Boolean isPaused;
 
-    public Boolean  isPaused;
-
-    //private NextWaveController nextWaveController;
     GameObject nextWaveButton;
+    GameObject temps_restant;
+    GameObject pauseButton;
+    GameObject continueButton;
     TextMeshProUGUI timer_Text;
 
     // Start is called before the first frame update
     void Start()
     {
         canva = GameObject.Find("Canvas");
-        player = GameObject.Find("Player");
+        temps_restant = GameObject.Find("Canvas/WaveTimer");
         waveTime = canva.GetComponent<WaveScript>().timer;
-        timer_Text = GetComponent<TextMeshProUGUI>();
+        timer_Text = temps_restant.GetComponent<TextMeshProUGUI>();
 
-        // nextWaveController = canva.GetComponent<NextWaveController>();
+
         // Récupère le bouton de vague suivante et le cache
         nextWaveButton = GameObject.Find("Canvas/NextWaveButton");
+        pauseButton = GameObject.Find("Canvas/PauseMenu");
+        continueButton = GameObject.Find("Canvas/PauseMenu/Continuer");
         nextWaveButton.SetActive(false);
+        pauseButton.SetActive(false);
 
-        playerInput = player.GetComponent<PlayerInput>();
-
-        firstPersonController = player.GetComponent<FirstPersonController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        player = GameObject.Find("Player");
-        // Accédez au temps écoulé depuis le script WaveScript
+        Debug.Log("Pause " + isPaused);
+        // Récupère le temps 
         waveTime = canva.GetComponent<WaveScript>().timer;
         seconde = Mathf.FloorToInt(waveTime);
 
@@ -68,12 +67,33 @@ public class TimerHUDController : MonoBehaviour
         }
     }
 
-        void OnPauseMenu(InputValue value)
+    void OnPauseMenu(InputValue value)
     {
-        isPaused = true;
-        Debug.Log("OnPauseMenu Action is called");
-        Debug.Log(isPaused);
-        Time.timeScale = 0F;
+        if (isPaused == true)
+        {
+            // Quand le jeu est plus en pause
+            isPaused = false;
+
+            pauseButton.SetActive(false);
+
+            Time.timeScale = 1F;
+
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+        }
+        else
+        {
+            // Quand le jeu est en pause 
+            isPaused = true;
+            Time.timeScale = 0F;
+
+            pauseButton.SetActive(true);
+
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
+
     }
 
 }

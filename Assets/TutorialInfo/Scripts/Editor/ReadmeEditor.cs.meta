@@ -10,7 +10,6 @@ MonoImporter:
   userData: 
   assetBundleName: 
   assetBundleVariant: 
-<<<<<<< HEAD
 AssetOrigin:
   serializedVersion: 1
   productId: 196525
@@ -18,5 +17,3 @@ AssetOrigin:
   packageVersion: 1.2
   assetPath: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
   uploadId: 562678
-=======
->>>>>>> a3c3f785000291e3a6ec2b0d00a020a93b47616d

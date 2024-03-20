@@ -42,9 +42,18 @@
                     "initialStateCheck": false
                 },
                 {
+                    "name": "PauseMenu",
+                    "type": "Button",
+                    "id": "53e13926-ec7b-4d00-b8ba-dd8f82e3b891",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "PlaceWall",
                     "type": "Button",
-                    "id": "a83205bd-31bd-410d-9cae-a8e3b7c6acce",
+                    "id": "d2a6c580-bd28-4e5d-9e42-f63d7ff0ae6b",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -230,7 +239,18 @@
                 },
                 {
                     "name": "",
-                    "id": "f6640e68-a635-487d-b375-b0d9bf7caed7",
+                    "id": "5ca6364a-fef5-4093-8a59-462240d08866",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "PauseMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a01beca0-9513-400a-9bb7-4bf0a39bd7d9",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
