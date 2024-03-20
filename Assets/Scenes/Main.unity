@@ -1734,19 +1734,13 @@ MonoBehaviour:
     type: 3}
   wallNumber: 3
   goldNumber: 0
-<<<<<<< HEAD
-  GoldhudController: {fileID: 0}
-=======
   GoldhudController: {fileID: 951060372}
->>>>>>> b0a56e3eebaca275157cb9049ec563457bd3d214
 --- !u!4 &932412703 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47,
     type: 3}
   m_PrefabInstance: {fileID: 1922761848}
   m_PrefabAsset: {fileID: 0}
-<<<<<<< HEAD
-=======
 --- !u!114 &932412712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1854,7 +1848,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 951060370}
   m_CullTransparentMesh: 1
->>>>>>> b0a56e3eebaca275157cb9049ec563457bd3d214
 --- !u!1 &1031782302
 GameObject:
   m_ObjectHideFlags: 0
@@ -2887,8 +2880,6 @@ PrefabInstance:
       insertIndex: 6
       addedObject: {fileID: 932412712}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
-<<<<<<< HEAD
-=======
 --- !u!1 &1988190762
 GameObject:
   m_ObjectHideFlags: 0
@@ -2967,4 +2958,3 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1988190762}
   m_CullTransparentMesh: 1
->>>>>>> b0a56e3eebaca275157cb9049ec563457bd3d214
