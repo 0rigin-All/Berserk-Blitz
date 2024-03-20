@@ -46,11 +46,11 @@ public class EnemyController : MonoBehaviour
         if (dropPrefab != null)
         {
             // Instancier la pièce à l'emplacement de l'ennemi
-            Debug.Log("gold drop !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!");
+            Debug.Log("gold drop !!!!!!!!!!!!!!!!!!!!!!!!!!!!");
             Instantiate(dropPrefab, transform.position, Quaternion.identity);
         }
     }
-    
+
     private void OnDestroy()
     {
         Debug.Log("object detruit");
